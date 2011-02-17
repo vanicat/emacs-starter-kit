@@ -22,6 +22,7 @@
    :END:
 #+begin_src emacs-lisp
   (require 'edit-server)
+  (setq edit-server-new-frame nil)
 
   (condition-case nil
       (edit-server-start)
