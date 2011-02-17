@@ -9,11 +9,6 @@
   (defun add-load-path (dir)
     (interactive "D")
     (push dir load-path))
-
-  (defun add-sub-load-path (dir)
-    (push (expand-file-name dir dotfiles-dir) load-path))
-
-  (add-sub-load-path ".")
 #+end_src
 
 * Chromium a besoin de edit-server
@@ -339,8 +334,6 @@ Doit être au début sinon, problème avec le before-save-hook
    :ID:       2945a736-1523-4cd8-8b7c-a58fed61f7f8
    :END:
 #+begin_src emacs-lisp
-  (add-sub-load-path "magit")
-
   (autoload 'git-status "git" "" t)
   (autoload 'git-blame-mode "git-blame"
   (autoload 'magit-status "magit" "" t)
@@ -352,8 +345,6 @@ Doit être au début sinon, problème avec le before-save-hook
     :ID:       26718e97-db3d-40b2-bc2b-6842a6289d42
     :END:
 #+begin_src emacs-lisp
-  (add-sub-load-path "mo-git-blame")
-
   (autoload 'mo-git-blame-file "mo-git-blame" nil t)
   (autoload 'mo-git-blame-current "mo-git-blame" nil t)
 
@@ -366,10 +357,6 @@ Doit être au début sinon, problème avec le before-save-hook
    :ID:       ad85a2b9-dd75-4a44-a45a-fadcbbd71a26
    :END:
 #+begin_src emacs-lisp
-  (add-sub-load-path "rhtml")
-  (add-sub-load-path "rinari")
-
-
   (modify-coding-system-alist 'file "\\..?rb$" 'utf-8)
   (modify-coding-system-alist 'file "\\.rhtml$" 'utf-8)
 
@@ -513,8 +500,6 @@ Doit être au début sinon, problème avec le before-save-hook
    :ID:       aa7e5923-38d6-494a-ab8f-52e41869db6b
    :END:
 #+begin_src emacs-lisp
-  (add-sub-load-path "lagn")
-
   (autoload 'lagn-list "lagn" "" t)
   (autoload 'lagn-search "lagn" "" t)
   (autoload 'lagn-toggle "lagn" "" t)
@@ -547,8 +532,6 @@ Doit être au début sinon, problème avec le before-save-hook
    :ID:       41053174-198d-4fff-a97f-0b640d5a1792
    :END:
 #+begin_src emacs-lisp
-  (add-sub-load-path "google-map")
-
   (autoload 'google-maps "google-maps" "" t)
 #+end_src
 
