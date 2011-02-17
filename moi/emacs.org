@@ -41,14 +41,6 @@ Doit être au début sinon, problème avec le before-save-hook
   (require 'ethan-wspace)
 #+end_src
 
-* Les customs
-  :PROPERTIES:
-  :ID:       58c99dca-b283-4687-93cc-d6951cc5346d
-  :END:
-#+begin_src comment
-  (setq custom-file "~/.custom")
-  (load-file "~/.custom")
-#+end_src
 * Le desktop
 #+begin_src emacs-lisp
   (setq desktop-save ())
