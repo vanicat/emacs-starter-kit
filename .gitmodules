@@ -13,3 +13,6 @@
 [submodule "src/zenburn-emacs"]
 	path = src/zenburn-emacs
 	url = http://github.com/bbatsov/zenburn-emacs.git
+[submodule "src/rinari"]
+	path = src/rinari
+	url = git://github.com/vanicat/rinari.git
