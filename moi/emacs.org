@@ -322,7 +322,8 @@ Doit être au début sinon, problème avec le before-save-hook
 #+end_src
 
 * configurations des modes
-** git/magit
+** vcs
+*** git/magit
    :PROPERTIES:
    :ID:       2945a736-1523-4cd8-8b7c-a58fed61f7f8
    :END:
@@ -331,6 +332,11 @@ Doit être au début sinon, problème avec le before-save-hook
   (autoload 'git-blame-mode "git-blame"
   (autoload 'magit-status "magit" "" t)
     "Minor mode for incremental blame for Git." t)
+#+end_src
+*** vc
+#+begin_src emacs-lisp
+  (eval-after-load "vc-hooks"
+    '(define-key vc-prefix-map "=" 'ediff-revision))
   (add-to-list 'vc-handled-backends 'GIT)
 #+end_src
 *** mo-git-blame
