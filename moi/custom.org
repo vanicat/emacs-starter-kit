@@ -70,7 +70,6 @@
  '(spam-use-regex-headers t)
  '(speedbar-show-unknown-files nil)
  '(speedbar-supported-extension-expressions (quote (".[ch]\\(\\+\\+\\|pp\\|c\\|h\\|xx\\)?" ".tex\\(i\\(nfo\\)?\\)?" ".el" ".emacs" ".l" ".lsp" ".p" ".java" ".f\\(90\\|77\\|or\\)?" ".ada" ".p[lm]" ".tcl" ".m" ".scm" ".pm" ".py" ".g" ".s?html" "[Mm]akefile\\(\\.in\\)?" ".mli?")))
- '(text-mode-hook (quote (turn-on-flyspell text-mode-hook-identify set-word-wrap)))
  '(tool-bar-mode nil)
  '(use-file-dialog nil)
  '(w3m-key-binding (quote info))
