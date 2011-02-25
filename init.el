@@ -4,6 +4,7 @@
 ;;
 ;; This is the first thing to get loaded.
 ;;
+(setq message-log-max 1000)
 
 (setq dotfiles-dir (file-name-directory (or load-file-name (buffer-file-name))))
 
