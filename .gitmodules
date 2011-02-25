@@ -19,3 +19,6 @@
 [submodule "src/org-contacts"]
 	path = src/org-contacts
 	url = git://git.naquadah.org/org-contacts.git
+[submodule "src/gnus"]
+	path = src/gnus
+	url = http://git.gnus.org/gnus.git
