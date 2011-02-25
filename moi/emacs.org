@@ -370,7 +370,9 @@ Doit être au début sinon, problème avec le before-save-hook
           (newline)
           (ruby-insert-end))))
 
-  (load (expand-file-name "nxml/autostart.el" (expand-file-name "src" dotfiles-dir)))
+  (unless (require 'nxml-mode () t)
+    (package-install 'nxml-mode)
+    (require 'nxml-mode))
 
   (yas/load-directory "~/.myconfig/emacs.d/yasnippets/yasnippets-ruby/")
   (yas/load-directory "~/.myconfig/emacs.d/yasnippets/yasnippets-rails/")
