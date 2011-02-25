@@ -316,6 +316,18 @@
 #+begin_src emacs-lisp
 (add-hook 'gnus-article-mode-hook 'set-word-wrap)
 #+end_src
+* Spam
+#+begin_src emacs-lisp
+  (spam-initialize)
+
+  (setq gnus-spam-newsgroup-contents '((".*[Ss][Pp][Aa][Mm].*" spam) (".*" neither)))
+
+  (setq gnus-spam-process-destinations
+        '(("nnml:.*" "nnml:mail.spam")
+          ("Gmail/\\[Gmail\\].Spam" nil)
+          ("Gmail/.*" "Gmail/[Gmail].Spam")))
+#+end_src
+
 * Integration with org
 #+begin_src emacs-lisp
   (require 'org-gnus)
