@@ -337,10 +337,15 @@
   (defun lld-notmuch-shortcut ()
     (define-key gnus-group-mode-map "GG" 'notmuch-search))
 
+  (setq lld-notmuch-my-gmail
+        (if (string= system-name "ordicollegeS2")
+            "Gmail/"
+            "nnimap+localhost:Gmail/"))
+
   (defun lld-notmuch-file-to-group (file)
     "Calculate the Gnus group name from the given file name."
     (let ((group (file-name-directory (directory-file-name (file-name-directory file)))))
-      (setq group (replace-regexp-in-string ".*/Gmail/" "nnimap+localhost:Gmail/" group))
+      (setq group (replace-regexp-in-string ".*/Gmail/" lld-notmuch-my-gmail group))
       (setq group (replace-regexp-in-string "/$" "" group))
       (if (string-match ":$" group)
           (concat group "INBOX")
