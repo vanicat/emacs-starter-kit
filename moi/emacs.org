@@ -250,7 +250,16 @@ Doit être au début sinon, problème avec le before-save-hook
     (start-process "a.out" "a.out" "a.out"))
 
   (defun set-word-wrap () (interactive) (setq word-wrap t))
-  (setq text-mode-hook (quote (turn-on-flyspell text-mode-hook-identify set-word-wrap)))
+
+  (defun add-flyspell-to-hippie-expand ()
+    (make-local-variable 'hippie-expand-try-functions-list)
+    (setq hippie-expand-try-functions-list
+          (append hippie-expand-try-functions-list '(try-flyspell-auto-correct-word))))
+
+  (add-hook 'text-mode-hook 'turn-on-flyspell)
+  (add-hook 'text-mode-hook 'text-mode-hook-identify)
+  (add-hook 'text-mode-hook 'set-word-wrap)
+  (add-hook 'text-mode-hook 'add-flyspell-to-hippie-expand)
 
   (defun mouse-set-point-and-find-tag (event)
     "Set the point to the position of the mouse and invoke find-tag on the word at the
