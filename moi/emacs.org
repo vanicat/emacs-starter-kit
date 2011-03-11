@@ -133,6 +133,11 @@ Doit être au début sinon, problème avec le before-save-hook
 #+end_src
 
 * Petites configs
+** ido
+#+begin_src emacs-lisp
+  (setq ido-use-filename-at-point nil)
+#+end_src
+
 ** auto-compression
    :PROPERTIES:
    :ID:       bb4b8b20-1119-46e9-ac76-60ac3864c744
