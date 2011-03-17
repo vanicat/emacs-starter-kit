@@ -44,9 +44,13 @@
       (delete-region (match-beginning 0) (match-end 0))
       (insert "; -*-ledger-*-\n")
       (while (not (eobp))
-        (unless (looking-at "^D\\([0-9]\\{2\\}\\)/\\([0-9]\\{2\\}\\)/\\([0-9]\\{4\\}\\)\n")
-          (error "strange file"))
-        (replace-match "\\3/\\2/\\1")
+        (cond
+          ((looking-at "^D\\([0-9]\\{2\\}\\)/\\([0-9]\\{2\\}\\)/\\([0-9]\\{4\\}\\)\n")
+           (replace-match "\\3/\\2/\\1"))
+          ((looking-at "^D\\([0-9]\\{2\\}\\)/\\([0-9]\\{2\\}\\)/\\([0-9]\\{2\\}\\)\n")
+           (replace-match "20\\3/\\2/\\1"))
+          (t
+           (error "strange file")))
         (let (balance-account
               (li ledger-read-from-qif-auto-assoc)
               note amount num payee)
