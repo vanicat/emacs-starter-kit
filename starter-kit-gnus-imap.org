@@ -77,11 +77,11 @@ and make sure that no-one else can read it with
 #+end_src
 
 * sending mail
-/Requirement/: gnus uses the [[http://en.wikipedia.org/wiki/STARTTLS][starttls]] tool for encrypted sending of
+/Requirement/: gnus uses the [[http://www.gnu.org/software/gnutls/][gnutls]] tool for encrypted sending of
 email to the Gmail SMTP server.  This is easily installed on modern
 Debian (including Ubuntu) systems with
 #+begin_src sh
-  apt-get install starttls
+  apt-get install gnutls-bin
 #+end_src
 
 The following configures gnus to use the Gmail SMTP server for sending
@@ -92,7 +92,8 @@ email.
         smtpmail-auth-credentials '(("smtp.gmail.com" 587 "your-name@gmail.com" nil))
         smtpmail-default-smtp-server "smtp.gmail.com"
         smtpmail-smtp-server "smtp.gmail.com"
-        smtpmail-smtp-service 587)
+        smtpmail-smtp-service 587
+        starttls-use-gnutls t)
 #+end_src
 
 If you don't want to be prompted for a password on every mail sent,
