@@ -67,7 +67,7 @@ The [[http://emacswiki.org][Emacs Wiki]] is also very handy.
    cd src/org/
    make
    #+end_src
-6. build [[http://www.gnu.org/software/auctex/][auctex]] -- for instilllation help see the [[http://www.gnu.org/software/auctex/manual/auctex/Installation.html#Installation][auctex instillation
+6. build [[http://www.gnu.org/software/auctex/][auctex]] -- for installation help see the [[http://www.gnu.org/software/auctex/manual/auctex/Installation.html#Installation][auctex installation
    instructions]], auctex requires a working TeX installation
    #+begin_src sh
    cd src/auctex
@@ -539,7 +539,7 @@ Frequently asked questions.
 
 Please share anything that you have come across which you think could
 be helpful, either in the form of a pull request, a patch, or just an
-email to me http://github.com/eschulte.
+email to me at =schulte.eric= /at/ =gmail.com=.
 
 ** How do I use the starter kit without compiling org-mode?
 :PROPERTIES:
