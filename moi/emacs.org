@@ -23,6 +23,13 @@
       (edit-server-start)
     (error nil))
 #+end_src
+* Really launch the server
+#+begin_src emacs-lisp
+  (let ((delete-by-moving-to-trash nil))
+    (server-force-delete)
+    (server-start))
+#+end_src
+
 * Lisons nos fichiers infos
   :PROPERTIES:
   :ID:       8863eaa9-3ef6-472c-8e1f-9f58b2cd7af9
