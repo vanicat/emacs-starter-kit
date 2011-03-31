@@ -301,8 +301,9 @@ Doit être au début sinon, problème avec le before-save-hook
   (setq debian-changelog-mailing-address "vanicat@debian.org")
   (setq debian-changelog-full-name "Rémi Vanicat")
 
-  (setq user-mail-address "remi.vanicat@laposte.net")
+  (setq user-mail-address "remi.vanicat@gmail.com")
   (setq user-full-name "Rémi Vanicat")
+  (setq debian-bug-use-From-address "vanicat@debian.org")
 
   (setq pgg-gpg-user-id "Rémi Vanicat <vanicat@debian.org>")
   (setq pgg-encrypt-for-me "Rémi Vanicat <vanicat@debian.org>")
