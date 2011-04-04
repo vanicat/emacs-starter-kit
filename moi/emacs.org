@@ -140,6 +140,14 @@ Doit être au début sinon, problème avec le before-save-hook
 #+end_src
 
 * Petites configs
+** dabbrev
+#+begin_src emacs-lisp
+  (eval-after-load 'dabbrev
+    '(let ((fst (member 'try-expand-dabbrev hippie-expand-try-functions-list)))
+      (setcar fst 'try-expand-dabbrev-visible)
+      (setcdr fst (cons 'try-expand-dabbrev-all-buffers (cdr fst)))))
+#+end_src
+
 ** ido
 #+begin_src emacs-lisp
   (setq ido-use-filename-at-point nil)
