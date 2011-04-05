@@ -410,8 +410,8 @@ Doit être au début sinon, problème avec le before-save-hook
     (package-install 'nxml-mode)
     (require 'nxml-mode))
 
-  (yas/load-directory "~/.myconfig/emacs.d/yasnippets/yasnippets-ruby/")
-  (yas/load-directory "~/.myconfig/emacs.d/yasnippets/yasnippets-rails/")
+  ;; (yas/load-directory "~/.myconfig/emacs.d/yasnippets/yasnippets-ruby/")
+  ;; (yas/load-directory "~/.myconfig/emacs.d/yasnippets/yasnippets-rails/")
 
   (folding-add-to-marks-list 'ruby-mode "# {{{" "# }}}")
 
