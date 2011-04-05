@@ -199,7 +199,16 @@
   :ID:       75dfd292-47cb-4284-82d9-fdb440701600
   :END:
 #+begin_src emacs-lisp
-  (setq org-agenda-files (quote ("~/org/prgm.org" "~/org/notes.org" "~/org/mononoke.org" "~/org/personel.org" "~/org/aniversaire.org" "~/org/cours.org" "~/travail/snd/2010_201/notes-snd-01.org" "~/travail/snd/mps/mps.org" "~/travail/premiere/2010-2011 S/note-1S2-2010.org" "~/travail/premiere/2010-2011 STG/note-stg-10.org")))
+  (setq org-agenda-files '("~/org/prgm.org"
+                           "~/org/notes.org"
+                           "~/org/mononoke.org"
+                           "~/org/personel.org"
+                           "~/org/aniversaire.org"
+                           "~/org/cours.org"
+                           "~/travail/cours/snd/2010_201/notes-snd-01.org"
+                           "~/travail/cours/snd/mps/mps.org"
+                           "~/travail/cours/premiere/2010-2011 S/note-1S2-2010.org"
+                           "~/travail/cours/premiere/2010-2011 STG/note-stg-10.org"))
   (setq org-agenda-include-diary t)
   (setq org-capture-templates
         (quote (("n" "note" entry (file+headline "~/org/notes.org" "Notes")
