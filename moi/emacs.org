@@ -151,6 +151,10 @@ Doit être au début sinon, problème avec le before-save-hook
 ** ido
 #+begin_src emacs-lisp
   (setq ido-use-filename-at-point nil)
+
+  (setq ido-file-extensions-order
+        '(".org" ".gpg" ".el" t ".png" ".jpg" ".gif"
+        ".pdf" ".dvi" ".log" ".aux" ".snm"))
 #+end_src
 
 ** auto-compression
