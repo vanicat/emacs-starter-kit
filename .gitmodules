@@ -3,7 +3,7 @@
 	url = http://orgmode.org/org-mode.git
 [submodule "src/magit"]
 	path = src/magit
-	url = http://github.com/philjackson/magit.git
+	url = http://github.com/magit/magit.git
 [submodule "snippets/text-mode/org-mode"]
 	path = snippets/text-mode/org-mode
 	url = http://github.com/eschulte/yasnippet-org-mode.git
