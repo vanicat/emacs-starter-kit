@@ -320,13 +320,19 @@
 * Spam
 #+begin_src emacs-lisp
   (spam-initialize)
-
-  (setq gnus-spam-newsgroup-contents '((".*[Ss][Pp][Aa][Mm].*" spam) (".*" neither)))
-
+  
+  (setq gnus-spam-newsgroup-contents
+        '((".*[Ss][Pp][Aa][Mm].*" gnus-group-spam-classification-spam)
+          (".*" neither)))
+  
   (setq gnus-spam-process-destinations
         '(("nnml:.*" "nnml:mail.spam")
           ("Gmail/\\[Gmail\\].Spam" nil)
           ("Gmail/.*" "Gmail/[Gmail].Spam")))
+  
+  (setq gnus-ham-process-destinations
+        '(("nnml:.*" "nnml:mail.misc")
+          ("Gmail/\\[Gmail\\].Spam" "nnimap+localhost:Gmail/INBOX")))
 #+end_src
 
 * Integration with org
