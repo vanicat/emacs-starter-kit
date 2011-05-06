@@ -111,6 +111,9 @@
            (address "vanicat+abul@labri.fr"))
           ("gmane.linux.debian.devel.ocaml"
            ("Mail-Followup-To" "debian-ocaml-maint@lists.debian.org"))
+          ("Gmail/magit"
+           (signature "Rémi Vanicat\n")
+           (address "vanicat@debian.org"))
           (".*debian.*"
            (signature "Rémi Vanicat\n")
            (address "vanicat@debian.org")
