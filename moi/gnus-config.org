@@ -331,7 +331,7 @@
   (setq gnus-spam-process-destinations
         '(("nnml:.*" "nnml:mail.spam")
           ("Gmail/\\[Gmail\\].Spam" nil)
-          ("Gmail/.*" "Gmail/[Gmail].Spam")))
+          ("Gmail/.*" "nnimap+localhost:Gmail/[Gmail].Spam")))
   
   (setq gnus-ham-process-destinations
         '(("nnml:.*" "nnml:mail.misc")
