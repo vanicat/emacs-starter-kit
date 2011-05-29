@@ -154,7 +154,12 @@ Doit être au début sinon, problème avec le before-save-hook
 
   (setq ido-file-extensions-order
         '(".org" ".gpg" ".el" t ".png" ".jpg" ".gif"
-        ".pdf" ".dvi" ".log" ".aux" ".snm"))
+          ".pdf" ".dvi" ".log" ".aux" ".snm"))
+
+  (setq ido-show-dot-for-dired t)
+  (setq ido-enable-dot-prefix t)
+  ;; (setq ido-auto-merge-work-directories-length -1)
+  (setq ido-auto-merge-delay-time 1.4)
 #+end_src
 
 ** auto-compression
