@@ -143,7 +143,13 @@
   (add-hook 'message-mode-hook 'turn-on-flyspell)
   (add-hook 'message-mode-hook 'ispell-guess-dictionary)
 #+end_src
-
+** org-contact config
+#+begin_src emacs-lisp
+  (defun set-yas/fallback-behavior ()
+    (setq yas/fallback-behavior '(apply completion-at-point)))
+  
+  (add-hook 'message-mode-hook 'set-yas/fallback-behavior)
+#+end_src
 ** Before sending
 #+begin_src emacs-lisp
   (add-hook 'message-send-hook
