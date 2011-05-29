@@ -192,7 +192,7 @@
    :END:
 #+begin_src emacs-lisp
   (require 'org-contacts)
-  (setq org-contacts-files '("~/org/concact.org"))
+  (setq org-contacts-files '("~/org/contacts.org"))
 #+end_src
 * from custom
   :PROPERTIES:
