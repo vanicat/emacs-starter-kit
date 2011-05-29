@@ -243,3 +243,8 @@
   (setq org-time-stamp-custom-formats '("<%a %d/%m/%y>" . "<%a %d/%m/%y %H:%M>"))
   (setq org-todo-keywords '((sequence "TODO" "NEXT(n)" "WAIT(w!)" "PROGRESS(p)" "|" "ABANDON(a!)" "DONE(d!)")))
 #+end_src
+
+* It's done
+#+begin_src emacs-lisp
+  (provide 'org-config)
+#+end_src
