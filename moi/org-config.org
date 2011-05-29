@@ -1,4 +1,8 @@
 * Configurations de org-mode
+** Utilisons des dates européennes
+#+begin_src emacs-lisp
+  (setq calendar-date-style 'european)
+#+end_src
 ** remember with org-mode/contrib/lisp/
     :PROPERTIES:
     :ID:       548e4ba3-f6b2-4ff8-849e-6c764be375e7
