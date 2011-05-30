@@ -7,9 +7,6 @@
 [submodule "snippets/text-mode/org-mode"]
 	path = snippets/text-mode/org-mode
 	url = http://github.com/eschulte/yasnippet-org-mode.git
-[submodule "src/auctex"]
-	path = src/auctex
-	url = http://github.com/eschulte/auctex.git
 [submodule "src/zenburn-emacs"]
 	path = src/zenburn-emacs
 	url = http://github.com/bbatsov/zenburn-emacs.git
