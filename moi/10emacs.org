@@ -359,7 +359,13 @@ Doit être au début sinon, problème avec le before-save-hook
   (folding-add-to-marks-list 'lua-mode "-- {{{" "-- }}}")
   (folding-mode-add-find-file-hook)
 #+end_src
-
+* Tramp
+#+begin_src emacs-lisp
+  (add-to-list 'tramp-default-proxies-alist
+               '(nil "\\`root\\'" "/ssh:%h:"))
+  (add-to-list 'tramp-default-proxies-alist
+               '((regexp-quote (system-name)) nil nil))
+#+end_src
 * configurations des modes
 ** vcs
 *** git/magit
