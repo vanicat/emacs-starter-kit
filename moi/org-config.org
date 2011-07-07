@@ -188,6 +188,15 @@
   (add-hook 'org-mobile-post-push-hook
             (lambda ()
               (shell-command "cd ~/org-mobile; make push")))
+
+  (defun rv-org-mobile-push ()
+    (interactive)
+    (let (org-agenda-start-on-weekday
+          (string-to-number (format-time-string "%w")))
+      (org-mobile-push)))
+
+  (setq org-agenda-custom-commands
+        '(("n" "Next 21 days" agenda "" ((org-agenda-span 21)))))
 #+end_src
 
 ** org-contact
