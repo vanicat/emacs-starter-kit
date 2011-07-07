@@ -361,10 +361,12 @@ Doit être au début sinon, problème avec le before-save-hook
 #+end_src
 * Tramp
 #+begin_src emacs-lisp
-  (add-to-list 'tramp-default-proxies-alist
-               '(nil "\\`root\\'" "/ssh:%h:"))
-  (add-to-list 'tramp-default-proxies-alist
-               '((regexp-quote (system-name)) nil nil))
+  (eval-after-load 'tramp
+    '(progn
+       (add-to-list 'tramp-default-proxies-alist
+                    '(nil "\\`root\\'" "/ssh:%h:"))
+       (add-to-list 'tramp-default-proxies-alist
+                    '((regexp-quote (system-name)) nil nil))))
 #+end_src
 * configurations des modes
 ** vcs
