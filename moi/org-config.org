@@ -125,12 +125,24 @@
     :ID:       2c687ffb-3e38-4586-82de-903e0a9e9cf4
     :END:
 #+begin_src emacs-lisp
-  (eval-after-load 'org-babel
-    '(progn
-      (org-babel-add-interpreter "lua")
-      (add-to-list 'org-babel-tangle-langs '("lua" "lua" "#!/bin/env lua"))
-      (add-to-list 'org-babel-tangle-langs '("text" "text" ""))
-      (require 'org-babel-ruby)))
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((R . t)
+     (ditaa . t)
+     (dot . t)
+     (emacs-lisp . t)
+     (gnuplot . t)
+     (haskell . nil)
+     (latex . t)
+     (ledger . t)         ;this is the important one for this tutorial
+     (ocaml . nil)
+     (octave . t)
+     (python . t)
+     (ruby . t)
+     (screen . nil)
+     (sh . t)
+     (sql . nil)
+     (sqlite . t)))
 #+end_src
 ** mouvement dans org
     :PROPERTIES:
