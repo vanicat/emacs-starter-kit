@@ -1,4 +1,17 @@
 * Configurations de org-mode
+** Les fichiers de l'agenda
+   #+begin_src emacs-lisp
+     (setq org-agenda-files '("~/org/prgm.org"
+                              "~/org/notes.org"
+                              "~/org/mononoke.org"
+                              "~/org/personel.org"
+                              "~/org/aniversaire.org"
+                              "~/org/cours.org"
+                              "~/travail/cours/premiere/2011-2012 S/premiere-S.org"
+                              "~/travail/cours/snd/mps/mps.org"
+                              "~/travail/cours/snd/2011 201/seconde1.org"
+                              "~/travail/cours/premiere/2011-2012 STG/premiere-STG.org"))
+   #+end_src
 ** Utilisons des dates européennes
 #+begin_src emacs-lisp
   (setq calendar-date-style 'european)
@@ -112,12 +125,24 @@
     :ID:       2c687ffb-3e38-4586-82de-903e0a9e9cf4
     :END:
 #+begin_src emacs-lisp
-  (eval-after-load 'org-babel
-    '(progn
-      (org-babel-add-interpreter "lua")
-      (add-to-list 'org-babel-tangle-langs '("lua" "lua" "#!/bin/env lua"))
-      (add-to-list 'org-babel-tangle-langs '("text" "text" ""))
-      (require 'org-babel-ruby)))
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((R . t)
+     (ditaa . t)
+     (dot . t)
+     (emacs-lisp . t)
+     (gnuplot . t)
+     (haskell . nil)
+     (latex . t)
+     (ledger . t)         ;this is the important one for this tutorial
+     (ocaml . nil)
+     (octave . t)
+     (python . t)
+     (ruby . t)
+     (screen . nil)
+     (sh . t)
+     (sql . nil)
+     (sqlite . t)))
 #+end_src
 ** mouvement dans org
     :PROPERTIES:
@@ -212,16 +237,6 @@
   :ID:       75dfd292-47cb-4284-82d9-fdb440701600
   :END:
 #+begin_src emacs-lisp
-  (setq org-agenda-files '("~/org/prgm.org"
-                           "~/org/notes.org"
-                           "~/org/mononoke.org"
-                           "~/org/personel.org"
-                           "~/org/aniversaire.org"
-                           "~/org/cours.org"
-                           "~/travail/cours/snd/2010_201/notes-snd-01.org"
-                           "~/travail/cours/snd/mps/mps.org"
-                           "~/travail/cours/premiere/2010-2011 S/note-1S2-2010.org"
-                           "~/travail/cours/premiere/2010-2011 STG/note-stg-10.org"))
   (setq org-agenda-include-diary t)
   (setq org-capture-templates
         (quote (("n" "note" entry (file+headline "~/org/notes.org" "Notes")
