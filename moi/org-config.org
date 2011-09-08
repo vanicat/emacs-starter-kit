@@ -1,16 +1,25 @@
 * Configurations de org-mode
 ** Les fichiers de l'agenda
    #+begin_src emacs-lisp
-     (setq org-agenda-files '("~/org/prgm.org"
-                              "~/org/notes.org"
-                              "~/org/mononoke.org"
-                              "~/org/personel.org"
-                              "~/org/aniversaire.org"
-                              "~/org/cours.org"
-                              "~/travail/cours/premiere/2011-2012 S/premiere-S.org"
-                              "~/travail/cours/snd/mps/mps.org"
-                              "~/travail/cours/snd/2011 201/seconde1.org"
-                              "~/travail/cours/premiere/2011-2012 STG/premiere-STG.org"))
+     (setq org-agenda-files-cours
+           (list "~/org/cours.org"
+                 "~/travail/cours/premiere/2011-2012 S/1S.org"
+                 "~/travail/cours/snd/mps/mps.org"
+                 "~/travail/cours/snd/2011 201/seconde1.org"
+                 "~/travail/cours/premiere/2011-2012 STG/1STG.org"))
+
+     (setq org-agenda-files
+           (list* "~/org/prgm.org"
+                  "~/org/notes.org"
+                  "~/org/mononoke.org"
+                  "~/org/personel.org"
+                  "~/org/aniversaire.org"
+                  org-agenda-files-cours))
+
+     (defun org-export-icalendar-cours ()
+       (interactive)
+       (let ((org-combined-agenda-icalendar-file "~/org/cours.ics"))
+         (apply 'org-export-icalendar t org-agenda-files-cours)))
    #+end_src
 ** Utilisons des dates européennes
 #+begin_src emacs-lisp
