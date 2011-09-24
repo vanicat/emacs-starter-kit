@@ -386,6 +386,11 @@
     (define-key notmuch-show-mode-map (kbd "C-c C-c") 'lld-notmuch-goto-message-in-gnus))
 #+end_src
 
+* Expiring
+  #+begin_src emacs-lisp 
+    (setq gnus-parameters
+          '(("Gmail/\\[Gmail\\].Tous les messages" (expiry-target "nnimap+localhost:Gmail/[Gmail].Corbeille"))))
+  #+end_src
 
 * Completion
   #+begin_src emacs-lisp
