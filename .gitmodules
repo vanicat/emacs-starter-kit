@@ -16,3 +16,9 @@
 [submodule "src/gnus"]
 	path = src/gnus
 	url = http://git.gnus.org/gnus.git
+[submodule "src/mo-git-blame"]
+	path = src/mo-git-blame
+	url = https://github.com/mbunkus/mo-git-blame.git
+[submodule "src/GIMME"]
+	path = src/GIMME
+	url = git@github.com:vanicat/GIMME.git

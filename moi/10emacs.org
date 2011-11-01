@@ -125,6 +125,14 @@ Doit être au début sinon, problème avec le before-save-hook
   (global-set-key [S-mouse-2] 'mouse-set-point-and-find-tag)
 
   (global-set-key "\M-!" 'my-shell-command)
+
+  (define-key key-translation-map "\C-x8i" "∞")
+  (define-key key-translation-map "\C-x8l" "λ")
+  (define-key key-translation-map "\C-x8s" "√")
+  (define-key key-translation-map "\C-x8t" "↦")
+  (define-key key-translation-map "\C-x8^n" "ⁿ")
+  (define-key key-translation-map "\C-x8I" "∩")
+  (define-key key-translation-map "\C-x8U" "∪")
 #+end_src
 
 ** lagn
@@ -359,7 +367,15 @@ Doit être au début sinon, problème avec le before-save-hook
   (folding-add-to-marks-list 'lua-mode "-- {{{" "-- }}}")
   (folding-mode-add-find-file-hook)
 #+end_src
-
+* Tramp
+#+begin_src emacs-lisp
+  (eval-after-load 'tramp
+    '(progn
+       (add-to-list 'tramp-default-proxies-alist
+                    '(nil "\\`root\\'" "/ssh:%h:"))
+       (add-to-list 'tramp-default-proxies-alist
+                    '((regexp-quote (system-name)) nil nil))))
+#+end_src
 * configurations des modes
 ** vcs
 *** git/magit
