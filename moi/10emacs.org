@@ -65,7 +65,7 @@ Doit être au début sinon, problème avec le before-save-hook
       ((string= system-name "maison.at.home")
        200)
       ((string= system-name "toubib.at.home")
-       90)
+       180)
       (t 120)))
 
   (set-face-attribute 'default nil :background "black")
