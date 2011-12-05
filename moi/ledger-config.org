@@ -84,7 +84,8 @@
             (insert "  ; ")
             (insert note))
           (insert "\n")
-          (while (and li (not (string-match (caar li) payee)))
+          (while (and li (not (or (string-match (caar li) payee)
+                                  (string-match (caar li) note))))
             (setq li (cdr li)))
           (if li
               (setq balance-account (cdar li))
