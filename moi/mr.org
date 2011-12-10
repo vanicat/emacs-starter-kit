@@ -1,0 +1,54 @@
+#+TITLE: MR Emacs mode
+
+* Running mr
+** Customizable variable
+   #+name: mr-variables
+   #+begin_src emacs-lisp
+     (defcustom mr-command "mr"
+       "Where to find the mr command
+
+     It will be looked for in the path."
+
+       :type 'string)
+   #+end_src
+** Const
+   #+name: mr-consts
+   #+begin_src emacs-lisp
+     (defconst mr-commands (list "checkout"
+                                 "update"
+                                 "status"
+                                 "commit"
+                                 "record"
+                                 "push"
+                                 "diff"
+                                 "log"
+                                 "run"
+                                 "bootstrap"
+                                 "register"
+                                 "config"
+                                 "action"
+                                 "online"
+                                 "offline"
+                                 "remember")
+       "The known mr commands ")
+   #+end_src
+
+
+** Generic command
+   #+name: generic-command
+   #+begin_src emacs-lisp
+     (defun mr-run (command &optional directory &rest args)
+       "Run mr COMMAND in the DIRECTORY with ARGS.
+
+     directory is by default the home diretory."
+       (interactive
+        (list
+         (completing-read "Command: " mr-commands () 'confirm)
+         (if current-prefix-arg
+             (read-directory-name "Directory where to run: ")
+             (getenv "HOME"))))
+       (let ((default-directory directory))
+         (apply #'start-process "mr" "*mr-run*" mr-command command args)))
+   #+end_src
+
+
