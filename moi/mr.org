@@ -52,6 +52,7 @@
          (if current-prefix-arg
              (read-directory-name "Directory where to run: ")
              (getenv "HOME"))))
+       (pop-to-buffer mr-buffer-name)
        (let ((default-directory directory))
          (apply #'start-process "mr" mr-buffer-name mr-command command
        args)))
