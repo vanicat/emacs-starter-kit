@@ -26,7 +26,6 @@
                                  "bootstrap"
                                  "register"
                                  "config"
-                                 "action"
                                  "online"
                                  "offline"
                                  "remember")
