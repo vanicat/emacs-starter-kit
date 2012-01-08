@@ -31,6 +31,9 @@
                                  "offline"
                                  "remember")
        "The known mr commands ")
+
+     (defvar mr-buffer-name "*mr-run*"
+       "The name of the buffer where mr is run")
    #+end_src
 
 
@@ -50,7 +53,6 @@
              (read-directory-name "Directory where to run: ")
              (getenv "HOME"))))
        (let ((default-directory directory))
-         (apply #'start-process "mr" "*mr-run*" mr-command command args)))
+         (apply #'start-process "mr" mr-buffer-name mr-command command
+       args)))
    #+end_src
-
-
