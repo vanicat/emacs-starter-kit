@@ -39,12 +39,12 @@
 ** Generic command
    #+name: generic-command
    #+begin_src emacs-lisp
-     (defun mr-run (command &optional directory &rest args)
+     (defun mr-command (command &optional directory &rest args)
        "Run mr COMMAND in the DIRECTORY with ARGS.
 
      directory is by default the home diretory.
 
-     With prefix argument, MR-RUN will ask for the direcrory"
+     With prefix argument, MR-COMMAND will ask for the direcrory"
        (interactive
         (list
          (completing-read "Command: " mr-commands () 'confirm)
