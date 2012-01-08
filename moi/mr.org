@@ -57,4 +57,42 @@
        (let ((default-directory directory))
          (apply #'start-process "mr" mr-buffer-name mr-command command
        args)))
+
    #+end_src
+** Specialized command
+*** The macros
+    #+begin_src emacs-lisp
+      (defmacro define-mr-command (command)
+      "Define a simple mr-command"
+      `(defun ,(intern (concat "mr-" command)) (&optional directory)
+         (interactive
+          (list (if current-prefix-arg
+                    (read-directory-name "Directory where to run: ")
+                    (getenv "HOME"))))
+         (mr-command ,command directory)))
+
+      (defmacro define-mr-commands ()
+        `(progn
+           ,@(mapcar (lambda (command) `(define-mr-command ,command))
+                     mr-commands)))
+
+    #+end_src
+*** Applying them
+    #+begin_src emacs-lisp
+      (define-mr-command "checkout")
+      (define-mr-command "update")
+      (define-mr-command "status")
+      (define-mr-command "commit")            ;TODO: the message!
+      (define-mr-command "record")            ;TODO: the message!
+      (define-mr-command "push")
+      (define-mr-command "diff")
+      (define-mr-command "log")
+      ;;(define-mr-command "run")              TODO: need argument
+      ;;(define-mr-command "bootstrap")        TODO: need argument
+      (define-mr-command "register")          ;TODO: should alway ask for
+                                              ;the directory argument
+      ;;(define-mr-command "config")           TODO: need argument
+      (define-mr-command "online")
+      (define-mr-command "offline")
+      ;;(define-mr-command "remember")         TODO: need argument
+    #+end_src
