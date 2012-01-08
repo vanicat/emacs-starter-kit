@@ -40,7 +40,9 @@
      (defun mr-run (command &optional directory &rest args)
        "Run mr COMMAND in the DIRECTORY with ARGS.
 
-     directory is by default the home diretory."
+     directory is by default the home diretory.
+
+     With prefix argument, MR-RUN will ask for the direcrory"
        (interactive
         (list
          (completing-read "Command: " mr-commands () 'confirm)
